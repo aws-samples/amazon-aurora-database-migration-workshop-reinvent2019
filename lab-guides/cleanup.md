@@ -10,11 +10,10 @@ ___
 
 ## Cleanup steps
 
-1. Delete the Cloudformation stack.
+1. Delete the CloudFormation stack.
 2. Delete the DMS task.
 3. Delete the DMS replication instance. 
 4. Delete the DMS end points.
-
 
 ___
 

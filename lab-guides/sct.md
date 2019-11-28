@@ -15,7 +15,7 @@ ___
 
 ## Task 1 - Log in to Windows EC2 instance
 
-1. Go to the [Amazon EC2 console](https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#Home:) and click on Instances in the left column.
+1. Go to the [Amazon EC2 console](https://console.aws.amazon.com/ec2/v2/home) and click on Instances in the left column.
 2. Select the instance with the name **OracleXE-SCT** and then click the **Connect** button.
 
     _Note : If you need instructions on connecting to a Windows instance, please see our [documentation](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/connecting_to_windows_instance.html?icmpid=docs_ec2_console)._
@@ -24,8 +24,9 @@ ___
 
 3. Click on **Download Remote Desktop File** to download the RDP file to connect to the EC2 instance **OracleXE-SCT**. 
 4. Connect to the EC2 instance using the following password 
-
-    **Windows password**: GPSreInvent@321
+   
+    **User Name**: administrator           
+    **Password** : GPSreInvent@321
 
 ___
 
@@ -46,7 +47,7 @@ Now that you are connected to the EC2 instance **OracleXE-SCT**, launch the Sche
 
     ![Create New Project](images/new_project1.png)
 
-3. Click **Connect to Oracle** on the Select Template page. Enter the source database details, and click **Test Connection**. Once the connection is successfully tested, click **Next**.
+3. Click **Connect to Oracle** on the top menu bar. Enter the source database details from the below table, and click **Test Connection**. Once the connection is successfully tested, click **Ok**.
 
     Parameter | Value
     ----------|------
@@ -57,12 +58,11 @@ Now that you are connected to the EC2 instance **OracleXE-SCT**, launch the Sche
     User Name | hr
     Password |  hr123 
     Use SSL | Unchecked
-    Save Password | Checked
+    Store Password | Checked
     
     ![Connect to Oracle](images/sct_oracle.png)
 
-4. Click **Connect to Amazon Aurora(PostgreSQL compatible)** on the Select Template page. Enter the source database details in the form, and click **Test Connection**. Once
-the connection is successfully tested, click **Next**.
+4. Click **Connect to Amazon Aurora(PostgreSQL compatible)** on the top menu bar. Enter the target database details from the below table, and click **Test Connection**. Once the connection is successfully tested, click **Ok**.
 
     Parameter | Value
     ----------|------
@@ -72,7 +72,7 @@ the connection is successfully tested, click **Next**.
     User Name | postgres
     Password |  Aurora321 
     Use SSL | Unchecked
-    Save Password | Checked
+    Store Password | Checked
     
     ![Connect to Amazon Aurora](images/sct_aurora.png)
 
@@ -92,7 +92,7 @@ _Note: You may be prompted with a dialog box “These objects might already exis
 
 AWS SCT analyses the schema and creates a database migration assessment report for the conversion to PostgreSQL. Items with a red exclamation mark next to them cannot be directly translated from the source to the target. In this case,it includes Functions, Procedures, and Views.
 
-2. Click on the **View** button, and choose **Assessment Report view** to view the detailed assesment report.
+2. Click on the **View** button, and choose **Assessment Report view** to view the detailed assessment report.
 
 ![Assessment Report view](images/assessment.png)    
 

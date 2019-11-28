@@ -25,13 +25,15 @@ ___
 
 ## Workshop Activities
 
-1. [Lab Setup](lab-guides/lab-setup.md)
+<!-- 1. [Lab Setup](lab-guides/lab-setup.md) -->
+1. [Login to Event Engine and verify lab setup](lab-guides/lab-setup-verification.md)
 2. [Schema Conversion Tool (SCT)](lab-guides/sct.md)
-3. [Database Migration Service (DMS)](lab-guides/dms.md)
-4. [Optional :](lab-guides/optional1.md)
-5. [Optional :](lab-guides/optional2.md)
-6. [Optional :](lab-guides/optional3.md)
-7. [Cleanup](lab-guides/cleanup.md)
+3. [DMS - Replication Instance & Endpoints](lab-guides/dms-inst.md)
+4. [DMS - Replication Task for full-load](lab-guides/dms-fl.md)
+5. [DMS - Replication Task for Change Data Capture (CDC)](lab-guides/dms-cdc.md)
+6. [Validation - Using web application](lab-guides/optional1.md)
+7. [Optional :](lab-guides/optional2.md)
+8. [Cleanup](lab-guides/cleanup.md)
 
 ## License
 
