@@ -32,7 +32,7 @@ Description | Oracle to Aurora DMS replication instance
 Instance Class | dms.c4.xlarge 
 Replication engine version | 2.4.5 
 VPC | vpc-xxxxxxxxx (VpcId from [CloudFormation stack output](./lab-setup-verification.md))
-Allocated storage (GB) | leave default
+Allocated storage (GB) | Leave default
 Multi-AZ | Unchecked 
 Publicly accessible | Unchecked 
 
