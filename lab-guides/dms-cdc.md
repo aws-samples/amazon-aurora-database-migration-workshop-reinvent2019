@@ -1,4 +1,4 @@
-[Back to main guide](../README.md)|[Next](optional1.md)
+[Back to main guide](../README.md)|[Next](optional-validation.md)
 
 ___
 
@@ -142,4 +142,4 @@ ___
 This part of the workshop demonstrated a database replication with Data Change Capture in real time.
 ___
 
-[Back to main guide](../README.md)|[Next](optional1.md)
+[Back to main guide](../README.md)|[Next](optional-validation.md)

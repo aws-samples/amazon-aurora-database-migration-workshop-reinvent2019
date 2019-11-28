@@ -30,7 +30,7 @@ Connection Name | XE
 Username| hr 
 Password | hr123 
 Save Password | checked 
-Hostname | localhost 
+Hostname | localhost    
 Port| 1521 
 SID | XE 
 
@@ -70,7 +70,8 @@ Database name | AuroraPostgreSQLDB
 ![Aurora Connection](images/create_conn_aurora.png)
 
 2. After you have connected to the Aurora database,right click on connection and click open worksheet. 
-3. Drop foreign keys on the target Aurora database. Run the following query in the SQL window to drop foreign keys.(_Hint:Select all statements and click green play button_)
+3. Drop foreign keys on the target Aurora database. Run the following query in the SQL window to drop foreign keys.
+_Hint:Select all statements and click green play button_
 
 ```
 ALTER TABLE hr.countries DROP CONSTRAINT country_reg_fk;

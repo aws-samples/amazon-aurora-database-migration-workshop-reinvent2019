@@ -1,4 +1,4 @@
-﻿[Back to main guide](../README.md)|[Next](dms.md)
+﻿[Back to main guide](../README.md)|[Next](dms-inst.md)
 
 ___
 
@@ -126,4 +126,4 @@ Refer to the [Migration Playbook](https://d1.awsstatic.com/whitepapers/Migration
 This part of the workshop demonstrated how to convert and migrate the schema from an Oracle database to an Amazon Aurora PostgreSQL database. The AWS Schema Conversion Tool (SCT) automates the schema conversion to a large extent. These same steps can be followed to migrate SQL Server and Oracle workloads to other Amazon RDS engines including Aurora MySQL and MySQL.
 ___
 
-[Back to main guide](../README.md)|[Next](dms.md)
+[Back to main guide](../README.md)|[Next](dms-inst.md)
