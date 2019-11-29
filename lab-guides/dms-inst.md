@@ -31,7 +31,7 @@ Name | replication-instance
 Description | Oracle to Aurora DMS replication instance 
 Instance Class | dms.c4.xlarge 
 Replication engine version | 2.4.5 
-VPC | vpc-xxxxxxxxx (VpcId from [CloudFormation stack output](./lab-setup-verification.md))
+VPC | vpc-xxxxxxxxx (VpcId from [CloudFormation stack output](./lab-setup-verification.md#cloudformation-stack-outputs))
 Allocated storage (GB) | Leave default
 Multi-AZ | Unchecked 
 Publicly accessible | Unchecked 
@@ -55,7 +55,7 @@ Parameter | Value
 Endpoint type | Source endpoint
 Endpoint identifier | oracle-source
 Source engine | oracle
-Server name | Get `OracleSCTInstancePrivateIP` from [CloudFormation stack output](./lab-setup-verification.md)
+Server name | Get `OracleSCTInstancePrivateIP` from [CloudFormation stack output](./lab-setup-verification.md#cloudformation-stack-outputs)
 Port | 1521
 SSL mode | none 
 User name | hr
@@ -75,7 +75,7 @@ Parameter | Value
 Endpoint type | Target endpoint 
 Endpoint identifier | aurora-postgresql-target 
 Source engine | aurora-postgresql 
-Server name | [Get `AuroraPostgreSQLEndpoint` from CloudFormation stack output](./lab-setup-verification.md)
+Server name | [Get `AuroraPostgreSQLEndpoint` from CloudFormation stack output](./lab-setup-verification.md#cloudformation-stack-outputs)
 Port | 5432 
 SSL mode | none 
 User name | postgres 

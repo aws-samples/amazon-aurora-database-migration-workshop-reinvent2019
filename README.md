@@ -26,7 +26,7 @@ ___
 ## Workshop Activities
 
 <!-- 1. [Lab Setup](lab-guides/lab-setup.md) -->
-1. [Log-in to Event Engine and CloudFormation Stack Outputs](lab-guides/lab-setup-verification.md)
+1. [Log-in to Event Engine and get CloudFormation stack outputs](lab-guides/lab-setup-verification.md)
 2. [Schema Conversion Tool (SCT)](lab-guides/sct.md)
 3. [DMS - Replication Instance & Endpoints](lab-guides/dms-inst.md)
 4. [DMS - Replication Task for full-load](lab-guides/dms-fl.md)

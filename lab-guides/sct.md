@@ -66,7 +66,7 @@ Now that you are connected to the EC2 instance **OracleXE-SCT**, launch the Sche
 
     Parameter | Value
     ----------|------
-    Server Name | Get `AuroraPostgreSQLEndpoint` from CloudFormation stack output
+    Server Name | Get `AuroraPostgreSQLEndpoint` from [CloudFormation stack output](./lab-setup-verification.md#cloudformation-stack-outputs)
     Server Port | 5432
     Database | AuroraPostgreSQLDB 
     User Name | postgres

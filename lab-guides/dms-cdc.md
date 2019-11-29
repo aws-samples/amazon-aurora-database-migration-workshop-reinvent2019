@@ -91,6 +91,8 @@ Table Name | %
 Column Name | %
 Action | Make lowercase
 
+Verify that your DMS task configuration is same as in the following screen-shot.
+
 ![Create task mappings](images/create_task_mappings_cdc.png)
 
 6. After entering the values click on **Create task**.
@@ -103,7 +105,7 @@ ___
 
 ## Task 2 - Validate the on going data replication / CDC. 
 
-1. Log in to the SQL Developer connecting to the source Oracle database on **OracleXE-SCT** EC2 instance. 
+1. Log in to the SQL Developer connecting to the source Oracle database. 
 2. Verify records in existing `REGIONS` table in `HR` schema.
 
 ````
@@ -123,7 +125,7 @@ COMMIT WORK;
 
 ````
 
-4. Log in to the SQL Developer connecting to the target Aurora PostgreSQL database on **OracleXE-SCT** EC2 instance.
+4. Log in to the SQL Developer connecting to the target Aurora PostgreSQL database.
 
 5. Verify whether the changes are migrated to `REGION` table in target Aurora PostgreSQL database.
 
@@ -133,7 +135,7 @@ SELECT * FROM hr.regions;
 
 ![Final verification](images/final_verification.png)
 
-6. You can further verify the number of inserts, deletes, updates, and DDLs by viewing the **Table statistics** of **oracle-migration-task-cdc** task in AWS console.
+6. You can verify the number of inserts, deletes, updates, and DDLs by checking the **Table statistics** of the CDC task (**oracle-migration-task-cdc**)
 
 ![Table statistics](images/table_statistics_cdc.png)
 

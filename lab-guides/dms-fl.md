@@ -36,7 +36,7 @@ SID | XE
 
 ![SQLTargetDB creation](images/create_conn.png)
 
-4. After you have connected to the Oracle database, right click on connection and click open worksheet. 
+4. After you have connected to the Oracle database, right click on **XE** connection and click open worksheet. 
 5. Run the following query on the SQL window to get a count of the rows in the tables by clicking green play button. 
 
 ````
@@ -53,7 +53,7 @@ SELECT 'countries' TABLE_NAME, COUNT(*) FROM HR.COUNTRIES;
 ___
 
 ## Task 2 -  Configure the target database schema for full load replication
-Before running DMS Replication Task, you need to disable the foreign keys on the target database. 
+Before running DMS Replication Task, you need to disable the foreign keys on the target database. This prevents migration task failing due to referential integrity enforced by foreign keys.
 
 1. Right Click on `AuroraPostgreSQL` under Connections and select properties to **modify** the following parameters.
 
@@ -63,14 +63,26 @@ Connection Name | AuroraPostgreSQL
 Username| postgres
 Password | Aurora321 
 Save Password | checked 
-Hostname | Get `AuroraPostgreSQLEndpoint` from [CloudFormation stack output](./lab-setup-verification.md)
+Hostname | Get `AuroraPostgreSQLEndpoint` from [CloudFormation stack output](./lab-setup-verification.md#cloudformation-stack-outputs)
 Port| 5432
 Database name | AuroraPostgreSQLDB
 
 ![Aurora Connection](images/create_conn_aurora.png)
 
-2. After you have connected to the Aurora database,right click on connection and click open worksheet. 
-3. Drop foreign keys on the target Aurora database. Run the following query in the SQL window to drop foreign keys.
+2. After you have connected to the Aurora database,right click on **AuroraPostgreSQL** connection and click open worksheet. 
+3. Run the following query on the SQL window to get a count of the rows in the tables by clicking green play button. This query will return row count as zero ,since data is not migrated yet to target database. 
+
+````
+SELECT 'regions' TABLE_NAME, COUNT(*) FROM HR.REGIONS  UNION
+SELECT 'locations' TABLE_NAME, COUNT(*) FROM  HR.LOCATIONS UNION
+SELECT 'departments' TABLE_NAME, COUNT(*) FROM  HR.DEPARTMENTS UNION
+SELECT 'jobs' TABLE_NAME,  COUNT(*) FROM HR.JOBS UNION
+SELECT 'employees' TABLE_NAME, COUNT(*) FROM  HR.EMPLOYEES UNION
+SELECT 'job_history' TABLE_NAME, COUNT(*) FROM  HR.JOB_HISTORY UNION
+SELECT 'countries' TABLE_NAME, COUNT(*) FROM HR.COUNTRIES;
+````
+
+4. Drop foreign keys on the target Aurora database. Run the following query in the SQL window to drop foreign keys.
 _Hint:Select all statements and click green play button_
 
 ```
@@ -150,6 +162,8 @@ Schema Name | HR
 Table Name | %
 Column Name | %
 Action | Make lowercase
+
+Verify that your DMS task configuration is same as in the following screen-shot.
 
 ![Create task mappings](images/create_task_mappings.png)
 
