@@ -115,8 +115,9 @@ Enable CloudWatch logs | Checked
 
 *Enabling logging would help debug issues that DMS encounters during data migration*
 
-3. Expand the Table mappings section, and select Guided UI for the editing mode
-4. Click on Add new selection rule button and enter the following values:
+3. Expand the **Table mappings** section, and select Guided UI for the editing mode. Table mappings uses several types of rules to specify the data source, source schema, data, and any transformations that should occur during the migration.  
+4. Click on **Add new selection rule** button and enter the following values:
+You can use Selection rules to choose the schema and/or tables you want to include with, or exclude for migration. For this workshop you are including all the tables under `HR` schema.
 
 Parameter | Value
 ----- | -----
@@ -127,6 +128,7 @@ Action | Include
 _Hint:click “Enter a schema” from drop down to enter the schema name._
 
 5. Next, expand the Transformation rules section, and click on Add new transformation rule. Then, create the following rules:
+You can use transformation rules to modify the data written to the target database. For this workshop you are transforming the source schema, table and column name to lower case to match target schema. 
 
 Parameter | Value
 -------- | --------

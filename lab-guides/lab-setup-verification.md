@@ -5,7 +5,7 @@ ___
 # Login to Event Engine
 Event Engine provides you an AWS environment for running this workshop.  
 
-1. You will be given a hash code to log in to Event Engine. Refer to the following image for a sample hash code. 
+1. You will be given a hash code to log-in to Event Engine. Refer to the following image for a sample hash code. 
 
 ![Hash Code](images/hash-code.png)
 
@@ -17,7 +17,7 @@ Event Engine provides you an AWS environment for running this workshop.
 
    ![Dash Board](images/dashboard-open.png)
   
-# Lab Setup Verification
+# CloudFormation Stack Outputs
 
 The Event Engine runs the CloudFormation stack to set up following components in AWS:
 - An EC2 instance with following components 
