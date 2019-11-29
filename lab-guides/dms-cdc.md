@@ -48,6 +48,7 @@ Migration type | Replicate data changes only
 Start task on create | Checked
 CDC start mode | Don’t use custom CDC start mode
 CDC stop mode | Don’t use custom CDC stop mode
+Create recovery table on target DB | Unchecked
 Target table preparation mode | Do nothing
 Include LOB columns in replication | Limited LOB mode
 Max LOB size (KB) | 32
