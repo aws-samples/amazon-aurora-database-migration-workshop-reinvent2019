@@ -3,9 +3,9 @@ Description: Creates resources for the Oracle to Amazon Aurora migration worksho
 Mappings: 
   RegionMap: 
     us-east-1: 
-      "HVM64": "ami-0e7737a44e40e29c1"
+      "HVM64": "ami-001997e49afbbeb82"
     us-west-2: 
-      "HVM64": "ami-03624660c27cc6b5e"
+      "HVM64": "ami-081ad13c8a0be0e0b"
 Resources:
   VPC:
     Type: 'AWS::EC2::VPC'
