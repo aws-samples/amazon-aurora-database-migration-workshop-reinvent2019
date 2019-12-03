@@ -1,4 +1,4 @@
-﻿[Back to main guide](../README.md)|[Next](cleanup.md)
+﻿[Back to main guide](../README.md)|[Next](optional-resolv.md)
 
 ___
 
@@ -42,4 +42,4 @@ This part of the workshop demonstrated a database replication with Data Change C
 
 ___
 
-[Back to main guide](../README.md)|[Next](cleanup.md)
+[Back to main guide](../README.md)|[Next](optional-resolv.md)
