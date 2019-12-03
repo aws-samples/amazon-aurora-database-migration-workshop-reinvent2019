@@ -1,4 +1,4 @@
-[Back to main guide](../README.md)|[Next](optional-validation.md)
+﻿[Back to main guide](../README.md)|[Next](optional-validation.md)
 
 ___
 
@@ -6,17 +6,11 @@ ___
 
 You can use AWS Database Migration Service to perform continuous data replication. This helps you migrate your databases to AWS with virtually no downtime. All data changes to the source database that occur during the migration are continuously replicated to the target, allowing the source database to be fully operational during the migration process. After the database migration is complete, the target database will remain synchronized with the source for as long as you choose, allowing you to switchover the database at a convenient time.
 
-Oracle offers two methods for reading the redo logs when doing change processing, Oracle LogMiner and Oracle Binary Reader. Oracle LogMiner provides a SQL interface to Oracle’s online and archived redo log files. Binary Reader is an AWS DMS feature that reads and parses the raw redo log files directly.
-
-By default, AWS DMS uses Oracle LogMiner for change data capture (CDC).
-
 To capture change data, the source database must be in ARCHIVELOG mode and supplemental logging must be enabled.
 
-Similarly, you need to enable table-level supplemental logging for each table that you want to migrate.
+Refer to [Using Oracle LogMiner or Oracle Binary Reader for Change Data Capture (CDC)](https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC) for more details on configuring the source database for CDC.  
 
-Refer to [Using Oracle LogMiner or Oracle Binary Reader for Change Data Capture (CDC)](https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC) for more details.  
-
-_**Note: For this workshop we have already made these changes in the source Oracle database.**_
+_**Note: For this workshop, we have already made the configutation changes to the source Oracle database to support CDC.**_
 
 In this activity, you perform the following tasks:
 
@@ -114,7 +108,7 @@ SELECT * FROM HR.REGIONS;
 
 ![Initial verification](images/initial_verification.png)
 
-3. Add additional two rows to `REGIONS` table
+3. Add two new rows to the `REGIONS` table
 
 ````
 INSERT INTO HR.REGIONS VALUES (5,'APAC');

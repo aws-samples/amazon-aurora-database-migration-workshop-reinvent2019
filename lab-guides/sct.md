@@ -90,7 +90,7 @@ _Note: You may be prompted with a dialog box “These objects might already exis
 
 ![Convert Schema](images/convert_schema.png)
 
-AWS SCT analyses the schema and creates a database migration assessment report for the conversion to PostgreSQL. Items with a red exclamation mark next to them cannot be directly translated from the source to the target. In this case,it includes Functions, Procedures, and Views.
+AWS SCT analyses the schema and creates a database migration assessment report for the conversion to PostgreSQL. Items with a red exclamation mark next to them cannot be directly translated from the source to the target. In this case, it includes the SECURE_DML and ADD_JOB_HISTORY procedures, and the EMP_DETAILS_VIEW view.
 
 2. Click on the **View** button, and choose **Assessment Report view** to view the detailed assessment report.
 
@@ -102,15 +102,9 @@ AWS SCT analyses the schema and creates a database migration assessment report f
 
 ![Action Items](images/action-items.png) 
 
-Check each of the issues listed and compare the contents under the source Oracle panel and the target Aurora PostgreSQL panel. Are the issues resolved? And how? SCT has proposed resolutions by generating equivalent PostgreSQL DDL to convert the objects. Additionally, SCT highlights each conversion issue where it cannot automatically generate a conversion, and provide hints on how you can successfully convert the database object.
+5. Check each of the issues listed and compare the contents under the source Oracle panel and the target Aurora PostgreSQL panel. Are the issues resolved? And how? SCT has proposed resolutions by generating equivalent PostgreSQL DDL to convert the objects. Additionally, SCT highlights each conversion issue where it cannot automatically generate a conversion, and provide hints on how you can successfully convert the database object.
 
-Notice the issue highlighted in the procedure `ADD_JOB_HISTORY`. You’ll see that SCT is unable to automatically convert the procedure. You can take one of the following actions to fix the issue:
-    - Modify the objects on the source Oracle database so that AWS SCT can convert the objects to the target Aurora PostgreSQL database.
-    - Or, modify the scripts that AWS SCT generates before applying the scripts on the target Aurora PostgreSQL database.
-
-Refer to the [Migration Playbook](https://d1.awsstatic.com/whitepapers/Migration/oracle-database-amazon-aurora-postgresql-migration-playbook.pdf) for best practices to convert an Oracle database to a PostgreSQL database. 
-
-5. After fixing the schema conversion issues, right-click on the `HR` schema, and choose Create Report. Observe that the schema of the source database (Oracle) is now fully compatible with the target database (PostgreSQL).
+Notice the issue highlighted in the procedure `ADD_JOB_HISTORY`. You will see that SCT is unable to automatically convert the procedure. Ignore these issues for now. We will take a look at fixing these issues towards the end of the lab.  
 
 6. To migrate the converted schema to the target database, right click on the `HR` schema in the right-hand panel, and select **Apply to database**.
 
@@ -120,6 +114,8 @@ Refer to the [Migration Playbook](https://d1.awsstatic.com/whitepapers/Migration
 8. At this point, the schema has been applied to the target database. Expand the `HR` schema to see the tables.
 
     _Note: If you don’t see the tables, right click on `HR` schema and select **Refresh from Database**._
+
+9. Save the SCT project by clicking on File-> Save project.
 
 ### Conclusion
 

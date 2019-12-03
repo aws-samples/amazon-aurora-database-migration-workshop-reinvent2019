@@ -1,4 +1,4 @@
-[Back to main guide](../README.md)|[Next](dms-cdc.md)
+﻿[Back to main guide](../README.md)|[Next](dms-cdc.md)
 
 ___
 
@@ -55,7 +55,7 @@ ___
 ## Task 2 -  Configure the target database schema for full load replication
 Before running DMS Replication Task, you need to disable the foreign keys on the target database. This prevents migration task failing due to referential integrity enforced by foreign keys.
 
-1. Right Click on `AuroraPostgreSQL` under Connections and select properties to **modify** the following parameters.
+1. Right Click on `AuroraPostgreSQL` under Connections and select properties to **modify** the following parameters. After modifying the connection according to the following table, click ‘Test’ to test the connection, then click ‘Save’, and finally click ‘Connect’.
 
 Parameter | Value
 --- | ---
@@ -83,7 +83,7 @@ SELECT 'countries' TABLE_NAME, COUNT(*) FROM HR.COUNTRIES;
 ````
 
 4. Drop foreign keys on the target Aurora database. Run the following query in the SQL window to drop foreign keys.
-_Hint:Select all statements and click green play button_
+_Hint:**Select all the statements** before you run the query by clicking the green play button_
 
 ```
 ALTER TABLE hr.countries DROP CONSTRAINT country_reg_fk;
@@ -103,7 +103,7 @@ ALTER TABLE hr.locations DROP CONSTRAINT loc_c_id_fk;
 ___
 
 ## Task 3 - Configure and run Replication Task
-AWS DMS uses a Replication Task to migrate the data from source to the target database. In this part of the lab, you are going to create a Replication Task for migrating the existing data.
+AWS DMS uses a Replication Task to migrate the data from the source to the target database. In this part of the lab, you are going to create a Replication Task for migrating the existing data.
 
 1. Click on **Database migration tasks** on the navigation menu, then click on the **Create task** button.
 
@@ -181,13 +181,27 @@ ___
 1. Click on your task **oracle-migration-task** and scroll to the **Table statistics** section to view how many rows have been moved.
     ![Table statistics](images/table_statistics.png)
 2. If there is any error, the status color changes from green to red. Click on the **View logs** link for the logs.
-3. On the target Aurora database, check the tables for migrated data using SQL Developer.
+3. Right click on the **AuroraPostgreSQL** connection and click open worksheet. 
+4. Run the following query in the SQL window to get a count of the rows in the tables by clicking green play button.  
+
+````
+SELECT 'regions' TABLE_NAME, COUNT(*) FROM HR.REGIONS  UNION
+SELECT 'locations' TABLE_NAME, COUNT(*) FROM  HR.LOCATIONS UNION
+SELECT 'departments' TABLE_NAME, COUNT(*) FROM  HR.DEPARTMENTS UNION
+SELECT 'jobs' TABLE_NAME,  COUNT(*) FROM HR.JOBS UNION
+SELECT 'employees' TABLE_NAME, COUNT(*) FROM  HR.EMPLOYEES UNION
+SELECT 'job_history' TABLE_NAME, COUNT(*) FROM  HR.JOB_HISTORY UNION
+SELECT 'countries' TABLE_NAME, COUNT(*) FROM HR.COUNTRIES;
+````
+
+5. Now you should be able to see that the data has been migrated, and the row counts on the Oracle source and the Aurora target match.
      ![Verify Target database](images/verify_target_db.png)
 
 ___
 
 ## Task 5 - Restore the foreign keys 
-1. After the full load is complete, enable the foreign key constraints on the target database.
+1. After the full load is complete, enable the foreign key constraints on the target database. Run the following query in the SQL window to enable foreign keys.
+_Hint:**Select all the statements** before you run the query by clicking the green play button_
 
 ```
 ALTER TABLE hr.locations

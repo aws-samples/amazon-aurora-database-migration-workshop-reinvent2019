@@ -38,7 +38,7 @@ Publicly accessible | Unchecked
 
 ![Create replication instance](images/create_rep_inst_detail.png)
 
-_Note: Creation of the replication instance takes a few minutes. While waiting for the replication instance to be created, you can proceed with creation of source and target database endpoints in the next step. However, you can test the endpoint connectivity only after the replication instance has been created._
+_Note: Creation of the replication instance takes a few minutes. While waiting for the replication instance to be created, you can proceed with creation of source and target database endpoints in the next step. **However, you can test the endpoint connectivity only after the replication instance has been created**._
 
 ___
 
