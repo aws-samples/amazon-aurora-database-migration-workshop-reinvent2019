@@ -32,7 +32,7 @@ ___
 4. [DMS - Replication Task for full-load](lab-guides/dms-fl.md)
 5. [DMS - Replication Task for Change Data Capture (CDC)](lab-guides/dms-cdc.md)
 6. [Validation - Using web application](lab-guides/optional-validation.md)
-7. [Optional :](lab-guides/optional2.md)
+7. [Optional :](lab-guides/optional-resolv.md)
 8. [Cleanup](lab-guides/cleanup.md)
 
 ## License
