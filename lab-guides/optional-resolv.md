@@ -6,14 +6,14 @@ ___
 
 In this section, we will look at the SCT assessment report, examine some of the warnings from SCT, and manually convert the schema objects that SCT was unable to convert.
 
-_Note: If you have closed the SCT, please reopen the project in SCT (File-\&gt; Open Project from C:\Lab\SCT Projects\AWS Schema Conversion Tool Oracle to Aurora PostgreSQL)._
+_Note: If you have closed the SCT, please reopen the project in SCT (File-> Open Project from C:\Lab\SCT Projects\AWS Schema Conversion Tool Oracle to Aurora PostgreSQL)._
 
-Right-click on the HR schema from the Oracle source, select &quot;Create Report&quot;, then click on &quot;Action items&quot;. You will see three items listed as shown in the following screenshot.
+Right-click on the HR schema from the Oracle source, select **Create Report**, then click on **Action items**. You will see three items listed as shown in the following screenshot.
 
 ![DMS](images/Picture1.png)
 
 - EMP_DETAILS_VIEW view.
-  - Issue 5075: PostgreSQL doesn&#39;t support VIEW with the READ ONLY option.
+  - Issue 5075: PostgreSQL doesn't support VIEW with the READ ONLY option.
   - Schemas.HR.Views.EMP_DETAILS_VIEW: 555:568
 
 PostgreSQL does not support read only views. SCT recommends that we use the view without the read only option and it has made the change automatically. No further action is needed from us.
@@ -25,7 +25,7 @@ PostgreSQL does not support read only views. SCT recommends that we use the view
 
 SCT recommends that we review the transformed code, and set time zone manually if necessary. No further action is needed from us.
 
-- • ADD_JOB_HISTORY  procedure.
+- ADD_JOB_HISTORY  procedure.
   - Issue 5340: Unable to convert functions.
   - Schemas.HR.Procedures.ADD_JOB_HISTORY: 441:448 
   - Schemas.HR.Procedures.ADD_JOB_HISTORY: 451:462 
@@ -36,11 +36,11 @@ SCT recommends that we review the transformed code, and set time zone manually i
 
 We will have to manually convert this procedure. Please follow these steps to manually convert this procedure.
 
-1. Click on the HR schema from the Oracle source, expand the procedures node, and select the &#39;ADD\_JOB\_HISTORY&#39; procedure. SCT will show you the side-by-side view of the original procedure in Oracle and the converted procedure in Aurora PostgreSQL as shown in the following screenshot.
+1. Click on the HR schema from the Oracle source, expand the procedures node, and select the **ADD_JOB_HISTORY** procedure. SCT will show you the side-by-side view of the original procedure in Oracle and the converted procedure in Aurora PostgreSQL as shown in the following screenshot.
 
 ![DMS](images/Picture2.png)
 
-2.  Examine the converted procedure in PostgreSQL on the right side. You will notice that SCT has provided details (as a comment) on the error while attempting to convert the procedure. This is highlighted in yellow below.
+2.  Examine the converted procedure in PostgreSQL on the right side. You will notice that SCT has provided details (as a comment) on the error while attempting to convert the procedure. 
 
 ```
 CREATE OR REPLACE FUNCTION hr.add_job_history(
@@ -69,7 +69,7 @@ LANGUAGE  plpgsql;
 ```
 
 
-3. In this case, the fix is simple. Copy the insert statement outside the comment, in between the BEGIN END block, and add a semicolon (;) to the end of the insert statement as shown below. The modified code is highlighted in yellow.
+3. In this case, the fix is simple. Copy the insert statement outside the comment, in between the BEGIN END block, and add a semicolon (;) to the end of the insert statement as shown below. 
 ```
 CREATE OR REPLACE FUNCTION hr.add_job_history(
      IN p_emp_id DOUBLE PRECISION, 
