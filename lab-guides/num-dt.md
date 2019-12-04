@@ -19,10 +19,11 @@ It is recommended to specify both precision and scale while defining numeric col
 
 If a column is defined as **NUMBER** in Oracle, **without** any precision and scale, SCT will map it to **DOUBLE PRECISION** in PostgreSQL. This is because SCT cannot identify the number of digits after the decimal point (the scale) if it is not specified in the column data type definition. The following table shows the data type mapping SCT uses in various scenarios.
 
-Oracle Data Type	PostgreSQL Data Type
-NUMBER(9,3)		NUMERIC (9,3)	
-NUMBER(9,0)		NUMERIC (9,0)	
-NUMBER	DOUBLE PRECISION
+Oracle Data Type | PostgreSQL Data Type
+--- | ---
+NUMBER(9,3)	 |	NUMERIC (9,3)	
+NUMBER(9,0)	 |	NUMERIC (9,0)	
+NUMBER | DOUBLE PRECISION
 
 ## Issue with the data in the REGIONS table
 
