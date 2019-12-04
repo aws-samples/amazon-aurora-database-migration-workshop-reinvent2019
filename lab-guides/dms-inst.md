@@ -64,7 +64,7 @@ SID | XE
 
 ![Create Source Endpoints](images/create_sep.png)
 
-3. Once the information has been entered, click **Run Test** under **Endpoint-specific settings**. When the status turns to successful, click **Create endpoint**.
+3. Once the information has been entered, click **Run Test** under **Test endpoint connection (optional)**. When the status turns to successful, click **Create endpoint**.
 
 _Note: You can test the endpoint connectivity only after the replication instance has been created, wait for the replication instance creation to be completed.
 
@@ -84,7 +84,7 @@ Database name | AuroraPostgreSQLDB
 
 ![Create Target Endpoints](images/create_tep.png)
 
-5. Once the information has been entered, click **Run Test** under **Endpoint-specific settings**. When the status turns to successful, click **Create endpoint**.
+5. Once the information has been entered, click **Run Test** under **Test endpoint connection (optional)**. When the status turns to successful, click **Create endpoint**.
 
 ___
 
