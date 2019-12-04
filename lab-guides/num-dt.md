@@ -25,7 +25,7 @@ NUMBER(9,3)	 |	NUMERIC (9,3)
 NUMBER(9,0)	 |	NUMERIC (9,0)	
 NUMBER | DOUBLE PRECISION
 
-_Please refer to page 89 of the Oracle to Aurora PostgreSQL migration playbook for a detailed discussion on Data Type mappings between Oracle and PostgreSQL._
+_Please refer to page 89 of the [Oracle to Aurora PostgreSQL migration playbook](https://d1.awsstatic.com/whitepapers/Migration/oracle-database-amazon-aurora-postgresql-migration-playbook.pdf) for a detailed discussion on Data Type mappings between Oracle and PostgreSQL._
 
 ## Issue with the data in the REGIONS table
 
