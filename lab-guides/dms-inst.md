@@ -25,12 +25,14 @@ ___
 
 3. Configure the replication instance with the following parameter values. Then, click on the **Create** button.
 
+**_Note: Make sure that you have selected replication engine version as 2.4.5_**
+
 Parameter | Value
 --- | --- 
 Name | replication-instance 
 Description | Oracle to Aurora DMS replication instance 
 Instance Class | dms.c4.xlarge 
-Replication engine version | 2.4.5 
+Replication engine version | **2.4.5** 
 VPC | vpc-xxxxxxxxx (VpcId from [CloudFormation stack output](./lab-setup-verification.md#cloudformation-stack-outputs))
 Allocated storage (GB) | Leave default
 Multi-AZ | Unchecked 
